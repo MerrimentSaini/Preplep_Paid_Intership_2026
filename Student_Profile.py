@@ -58,28 +58,49 @@
 #Day-5 Dictionary Basics Practice Assignment..!
 
 #------ Create a student directory with name,email,phone, course, and marks -----------.
-student = {"Name" : "AviSaini",
-           "Email" : "merrimentsaini@gmail.com",
-           "PhoneNo" : "7351****22",
-           "Course" : "BCA-2nd Year",
-           "Marks" : 456}
+# student = {"Name" : "AviSaini",
+#            "Email" : "merrimentsaini@gmail.com",
+#            "PhoneNo" : "7351****22",
+#            "Course" : "BCA-2nd Year",
+#            "Marks" : 456}
+#
+# print(student)
+#
+# # --------- UPDATE MARKS ----------- .
+# student.update({"Marks" : 550})
+# print("\nAfter updating the student dictionary marks: ")
+# print(student)
+#
+# # --------- COPY DICTIONARY & MODIFY COPIED DATA ---------- .
+# student2 = student.copy()
+# print("\nAfter copying the student dictionary to student2: \n",student2)
+#
+# #-------- UPDATE THE STUDENT NAME ----------- .
+# student2.update({"Name" : "Harsh"})
+# print("\nAfter updating the student dictionary key-name: \n",student2)
+#
+# print("\nI observed the difference between the oringinal and copied dictionary is that only the"
+#       "copied dictionary impacted throught the dictionary method and rest of the dictionary remains the same..!")
+#
 
-print(student)
 
-# --------- UPDATE MARKS ----------- .
-student.update({"Marks" : 550})
-print("\nAfter updating the student dictionary marks: ")
-print(student)
+# ---------- INTERNSHIP ~ WEEK-2 ----------- .
 
-# --------- COPY DICTIONARY & MODIFY COPIED DATA ---------- .
-student2 = student.copy()
-print("\nAfter copying the student dictionary to student2: \n",student2)
+#List Comprehension..!
+list = [i for i in range(1,100+1)]
+print(list)
 
-#-------- UPDATE THE STUDENT NAME ----------- .
-student2.update({"Name" : "Harsh"})
-print("\nAfter updating the student dictionary key-name: \n",student2)
-
-print("\nI observed the difference between the oringinal and copied dictionary is that only the"
-      "copied dictionary impacted throught the dictionary method and rest of the dictionary remains the same..!")
+#i) Extract EvenNmbrs from the list..!
+EvenNmbr = [i for i in list
+            if i%2 == 0]
+print("\nEvenNmbrs from the list are: \n",EvenNmbr)
 
 
+#ii) Extract numbers divisible by 3 and 5.
+Nmbrs = [i for i in list
+         if i%3 == 0 and i%5 == 0]
+print("\nNmbrs from the list divisible by 3 and 5 are: \n",Nmbrs)
+
+#iii) Square of the existing list elements.
+sqrt = [i*i for i in list]
+print("\nSquares of the list elements are: \n",sqrt)
