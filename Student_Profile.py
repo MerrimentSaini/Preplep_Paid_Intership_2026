@@ -84,47 +84,115 @@
 #
 
 
-# ---------- INTERNSHIP ~ WEEK-2 ----------- .
 
-#List Comprehension..!
-# list = [i for i in range(1,100+1)]
-# print(list)
-#
-# #i) Extract EvenNmbrs from the list..!
-# EvenNmbr = [i for i in list
-#             if i%2 == 0]
-# print("\nEvenNmbrs from the list are: \n",EvenNmbr)
-#
-#
-# #ii) Extract numbers divisible by 3 and 5.
-# Nmbrs = [i for i in list
-#          if i%3 == 0 and i%5 == 0]
-# print("\nNmbrs from the list divisible by 3 and 5 are: \n",Nmbrs)
-#
-# #iii) Square of the existing list elements.
-# sqrt = [i*i for i in list]
-# print("\nSquares of the list elements are: \n",sqrt)
 
 
 
 # ------------- INTERNSHIP ~ WEEK-2 (DAY-7) ---------------- .
 # Dictionary Comprehension..!
-sqrt = {x: x**2 for x in range(1,6)
-        if x >=3}
-print("\nSquare of the number of 1-5 through dictionary comprehension: \n", sqrt)
+# sqrt = {x: x*x for x in range(1,6)
+#         if x >=3}
+# print("\nSquare of the number of 1-5 through dictionary comprehension: \n", sqrt)
+#
+#
+# # First 20 even numbers..!
+# EvenNmbr = {x: x for x in range(1,21)
+#             if x%2 == 0}
+# print("\nEven Numbers are: \n",EvenNmbr)
+#
+#
+# # Sum of the first 10-Natural Numbers..!
+# total = 0
+# nmbrs  = {x : x for x in range(1,11)}
+# total = sum(nmbrs.values())
+# print("\nDictionary: ",nmbrs)
+# print("\nSum of first 10-natural nmbrs is: ",total)
+#
+#
+# # Creating Dictionaries from the Lists..!
+# students = ['Merriment','Monarch','Mayank','Mradul']
+# stu_Dict = {name: len(name) for name in students}
+# print("\nStudents Name are: \n",stu_Dict)
+#
+#
+# # Create the dictionary through the list names and marks..!
+# names = ['Avi','Mayank','Harsh','Mradul']
+# marks = [34,56,78,37]
+# stu_Marks = {names[i]:marks[i] for i in range (len(names))}
+# print("\nStudents Name and their Obtained marks are: \n",stu_Marks)
+#
+# # Filtering Dictionary Data..!
+# marks = {'Avi':34,'Mayank':56,'Harsh':78,'Mradull':37}
+# passed_students = {
+#     name:mark
+#     for name,mark in marks.items()
+#     if mark >= 50
+# }
+# print("\nPassed Students are: \n",passed_students)
+#
+# # Conver Marks into Percentage..!
+# percentage = {
+#     name:str(mark) + "%"
+#     for name,mark in marks.items()
+# }
+# print("\nStudent marks in percentage are: \n",percentage)
 
 
-# First 20 even numbers..!
-EvenNmbr = {x: x for x in range(1,21)
-            if x%2 == 0}
-print("\nEven Numbers are: \n",EvenNmbr)
 
-total = 0
-for i in range(1,11):
-    total += i
-print(total)
+# ------------------ Functions -------------------- .
+def calculate_percentage(marks):
+    total = sum(marks)
+    percentage = total/len(marks)
+    return percentage
 
-nmbrs  = {x : x for x in range(1,11)}
-total = sum(nmbrs.values())
-print("\nDictionary: ",nmbrs)
-print("\nSum of first 10-natural nmbrs is: ",total)
+list1 = [55,67,87,34]
+a = calculate_percentage(list1)
+print(a)
+
+
+
+#MODULE/TOPIC: Lambda Function..!
+#Syntax: variable_Name = lambda keyword arguments : expression
+
+sqrt = lambda nmbr : nmbr*nmbr
+print("\nSquare through lambda function: ",sqrt(5))
+
+#i). Lambda with map()..!
+#Syntax: map(function, iterable)
+
+nmbrs = [1,2,3,4,5]
+square = list(map(lambda x: x**2 , nmbrs))
+print("\nSquare of the mentioned list through map() function are: ",square)
+
+#ii). Convert marks into percentage..!
+mark = [80,90,45,65]
+percentage = list(map(lambda x: x/100*100, mark))
+print("\nPercentage is: ",percentage)
+
+#iii). Lambda with filter()..!
+# Syntax: filter(function,iterable)
+
+evens = list(filter(lambda x: x%2 == 0, mark))
+print("\nEven marks are: ",evens)
+passed = list(filter(lambda x: x >= 48, mark))
+print("\nMarks greater than 48 are: ",passed)
+
+#iv). Lambda with sorted()..!
+
+sorted_marks = sorted(mark, key = lambda mark: mark)
+print("\n",sorted_marks)
+
+
+# ---------- Error Handling -------------- ..!
+
+try:
+    a = int(input("\nEnter an int value: "))
+    #print("Try and Except")
+
+except ValueError:
+    print("\nIt supports only integer value.")
+
+
+finally: #It'll run always.
+    print("It'll run always. Either try is true or not.!")
+
