@@ -87,20 +87,44 @@
 # ---------- INTERNSHIP ~ WEEK-2 ----------- .
 
 #List Comprehension..!
-list = [i for i in range(1,100+1)]
-print(list)
+# list = [i for i in range(1,100+1)]
+# print(list)
+#
+# #i) Extract EvenNmbrs from the list..!
+# EvenNmbr = [i for i in list
+#             if i%2 == 0]
+# print("\nEvenNmbrs from the list are: \n",EvenNmbr)
+#
+#
+# #ii) Extract numbers divisible by 3 and 5.
+# Nmbrs = [i for i in list
+#          if i%3 == 0 and i%5 == 0]
+# print("\nNmbrs from the list divisible by 3 and 5 are: \n",Nmbrs)
+#
+# #iii) Square of the existing list elements.
+# sqrt = [i*i for i in list]
+# print("\nSquares of the list elements are: \n",sqrt)
 
-#i) Extract EvenNmbrs from the list..!
-EvenNmbr = [i for i in list
-            if i%2 == 0]
-print("\nEvenNmbrs from the list are: \n",EvenNmbr)
 
 
-#ii) Extract numbers divisible by 3 and 5.
-Nmbrs = [i for i in list
-         if i%3 == 0 and i%5 == 0]
-print("\nNmbrs from the list divisible by 3 and 5 are: \n",Nmbrs)
+# ------------- INTERNSHIP ~ WEEK-2 (DAY-7) ---------------- .
+# Dictionary Comprehension..!
+sqrt = {x: x**2 for x in range(1,6)
+        if x >=3}
+print("\nSquare of the number of 1-5 through dictionary comprehension: \n", sqrt)
 
-#iii) Square of the existing list elements.
-sqrt = [i*i for i in list]
-print("\nSquares of the list elements are: \n",sqrt)
+
+# First 20 even numbers..!
+EvenNmbr = {x: x for x in range(1,21)
+            if x%2 == 0}
+print("\nEven Numbers are: \n",EvenNmbr)
+
+total = 0
+for i in range(1,11):
+    total += i
+print(total)
+
+nmbrs  = {x : x for x in range(1,11)}
+total = sum(nmbrs.values())
+print("\nDictionary: ",nmbrs)
+print("\nSum of first 10-natural nmbrs is: ",total)
